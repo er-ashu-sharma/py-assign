@@ -13,14 +13,13 @@ def get_weatherdata():
 
     params ={
         'q':request.form.get("city"),
-        'appid':request.form.get('appid'),
-        'units':request.form.get('units')
+        'appid':'0eb9fb7274cf69d9a781d674865510d0',
+        'units':'metric'
     }
     response=requests.get(url, params=params)
     data = response.json()
     city=data['name']
     return render_template('resp.html', data=data)
-    return f"data : {data}, city:{city}"
 
 
 if __name__=='__main__':
